@@ -1,6 +1,6 @@
 # Nexora Commerce Frontend
 
-> FAANG-Level, Multi-Portal Enterprise E-commerce Platform Architecture Built with Vue 3, Composition API, Pinia, and Tailwind CSS.
+> Multi-Portal Enterprise E-commerce Platform Architecture Built with Vue 3, Composition API, Pinia, and Tailwind CSS.
 
 ---
 
