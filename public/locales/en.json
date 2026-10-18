@@ -1,0 +1,34 @@
+{
+  "common": {
+    "appName": "Nexora Commerce",
+    "search": "Search products, brands and categories...",
+    "cart": "Cart",
+    "wishlist": "Wishlist",
+    "account": "Account",
+    "checkout": "Checkout",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "viewDetails": "View Details",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "roleSwitcher": "Role Switcher"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "deals": "Deals & Promotions",
+    "support": "Help & Support"
+  },
+  "portals": {
+    "customer": "Customer Portal",
+    "admin": "Admin Dashboard",
+    "seller": "Seller Center",
+    "support": "Support Desk",
+    "warehouse": "Warehouse Ops",
+    "marketing": "Marketing Hub"
+  }
+}

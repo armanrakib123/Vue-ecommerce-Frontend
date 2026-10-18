@@ -1,0 +1,14 @@
+@import './tokens.css';
+@import './reset.css';
+@import './themes.css';
+@import './utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base app typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}

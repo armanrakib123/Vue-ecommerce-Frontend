@@ -1,0 +1,60 @@
+import { ROLES } from '@/permissions/roles.js'
+
+export const mockUsers = [
+  {
+    id: 'usr_cust_01',
+    name: 'Sarah Connor',
+    email: 'sarah.customer@nexora.io',
+    role: ROLES.CUSTOMER,
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
+    phone: '+1 (555) 234-5678',
+    memberSince: '2023-01-15',
+    tier: 'Platinum VIP',
+    loyaltyPoints: 3450,
+  },
+  {
+    id: 'usr_admin_01',
+    name: 'Alex Rivera',
+    email: 'alex.admin@nexora.io',
+    role: ROLES.ADMIN,
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    title: 'Head of Global Operations',
+    department: 'Executive',
+  },
+  {
+    id: 'usr_seller_01',
+    name: 'Marcus Vance',
+    storeName: 'AuraTech Sound & Gear',
+    email: 'marcus.seller@auratech.io',
+    role: ROLES.SELLER,
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    verified: true,
+    rating: 4.9,
+    productsCount: 48,
+  },
+  {
+    id: 'usr_support_01',
+    name: 'Elena Rostova',
+    email: 'elena.support@nexora.io',
+    role: ROLES.SUPPORT_AGENT,
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    queue: 'Tier 2 Escalations',
+    resolvedToday: 18,
+  },
+  {
+    id: 'usr_warehouse_01',
+    name: 'Devon Miles',
+    email: 'devon.ops@nexora.io',
+    role: ROLES.INVENTORY_MANAGER,
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    hub: 'San Francisco Central Hub (SF-01)',
+  },
+  {
+    id: 'usr_marketing_01',
+    name: 'Sophia Chen',
+    email: 'sophia.growth@nexora.io',
+    role: ROLES.MARKETING_MANAGER,
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
+    campaignsActive: 5,
+  }
+]

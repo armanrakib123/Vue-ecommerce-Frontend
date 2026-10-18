@@ -1,0 +1,5 @@
+export function formatAuthError(error) {
+  if (error?.response?.data?.message) return error.response.data.message
+  if (error?.message) return error.message
+  return 'Authentication failed. Please verify your credentials.'
+}

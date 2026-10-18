@@ -1,0 +1,74 @@
+import { ROLES } from './roles.js'
+import { PERMISSIONS } from './permissions.js'
+
+export const ROLE_PERMISSIONS = {
+  [ROLES.ADMIN]: Object.values(PERMISSIONS),
+  [ROLES.CUSTOMER]: [
+    PERMISSIONS.CATALOG_READ,
+    PERMISSIONS.ORDERS_READ_OWN,
+    PERMISSIONS.ORDERS_CANCEL,
+  ],
+  [ROLES.SELLER]: [
+    PERMISSIONS.CATALOG_READ,
+    PERMISSIONS.SELLER_MANAGE_OWN,
+    PERMISSIONS.SELLER_PAYOUTS,
+    PERMISSIONS.INVENTORY_READ,
+    PERMISSIONS.ANALYTICS_READ,
+  ],
+  [ROLES.CATALOG_MANAGER]: [
+    PERMISSIONS.CATALOG_READ,
+    PERMISSIONS.CATALOG_WRITE,
+    PERMISSIONS.CATALOG_DELETE,
+  ],
+  [ROLES.ORDER_MANAGER]: [
+    PERMISSIONS.CATALOG_READ,
+    PERMISSIONS.ORDERS_READ_ALL,
+    PERMISSIONS.ORDERS_UPDATE,
+    PERMISSIONS.ORDERS_CANCEL,
+  ],
+  [ROLES.INVENTORY_MANAGER]: [
+    PERMISSIONS.INVENTORY_READ,
+    PERMISSIONS.INVENTORY_ADJUST,
+    PERMISSIONS.INVENTORY_TRANSFER,
+  ],
+  [ROLES.SUPPORT_AGENT]: [
+    PERMISSIONS.CATALOG_READ,
+    PERMISSIONS.ORDERS_READ_ALL,
+    PERMISSIONS.SUPPORT_TICKETS_READ,
+    PERMISSIONS.SUPPORT_TICKETS_REPLY,
+  ],
+  [ROLES.MARKETING_MANAGER]: [
+    PERMISSIONS.CATALOG_READ,
+    PERMISSIONS.PROMOTIONS_MANAGE,
+    PERMISSIONS.COUPONS_MANAGE,
+    PERMISSIONS.ANALYTICS_READ,
+  ],
+  [ROLES.FINANCE_OPERATOR]: [
+    PERMISSIONS.ORDERS_READ_ALL,
+    PERMISSIONS.PAYMENTS_READ,
+    PERMISSIONS.REFUNDS_PROCESS,
+  ],
+  [ROLES.ANALYST]: [
+    PERMISSIONS.ANALYTICS_READ,
+    PERMISSIONS.ANALYTICS_EXPORT,
+  ],
+  [ROLES.GUEST]: [
+    PERMISSIONS.CATALOG_READ,
+  ],
+}
+
+export function can(user, permission) {
+  if (!user || !user.role) return false
+  if (user.role === ROLES.ADMIN) return true
+  const allowed = ROLE_PERMISSIONS[user.role] || []
+  return allowed.includes(permission)
+}
+
+export function hasRole(user, allowedRoles) {
+  if (!user || !user.role) return false
+  if (user.role === ROLES.ADMIN) return true
+  if (Array.isArray(allowedRoles)) {
+    return allowedRoles.includes(user.role)
+  }
+  return user.role === allowedRoles
+}
